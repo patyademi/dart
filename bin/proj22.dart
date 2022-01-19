@@ -3,6 +3,13 @@ void main(){
  Character lilit = Character.second('Lilit', 19, 56);
  lilit.info();
   person.info();*/
+
+  Train first = Train('Рязaнь', "12:30", 9);
+  Train second = Train.toMoscow('19:00', 23);
+  Train third = Train.nineAm('Омск', 18);
+  first.info();
+  second.info();
+  third.info();
 }
 
 /*class Character{
@@ -44,9 +51,12 @@ class Train {
     punkt = 'Москва';
   }
 
+  Train.nineAm(this.punkt, this.number){
+    time = '09:00';
+  }
 
   void info(){
-    print('В пункте назначенияя $punkt  в $time  должен прибыть поезд под номером - $namber');
+    print('В пункте назначенияя $punkt  в $time  должен прибыть поезд под номером - $number');
   }
 }
 
