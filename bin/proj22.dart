@@ -45,7 +45,7 @@ class Train {
   String time ='';
   int number = 0;
 
-  Train(this.punkt, this.time, this.number){}
+  Train(this.punkt, this.time, this.number);
 
   Train.toMoscow(this.time,this.number){
     punkt = 'Москва';
