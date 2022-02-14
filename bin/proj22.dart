@@ -1,4 +1,4 @@
-void main(){
+void main() {
   /*Character person= Character('Jake', 'man', 17, 65);
  Character lilit = Character.second('Lilit', 19, 56);
  lilit.info();
@@ -39,24 +39,23 @@ void main(){
   }
 }*/
 
-
 class Train {
-  String punkt ='';
-  String time ='';
+  String punkt = '';
+  String time = '';
   int number = 0;
 
   Train(this.punkt, this.time, this.number);
 
-  Train.toMoscow(this.time,this.number){
+  Train.toMoscow(this.time, this.number) {
     punkt = 'Москва';
   }
 
-  Train.nineAm(this.punkt, this.number){
+  Train.nineAm(this.punkt, this.number) {
     time = '09:00';
   }
 
-  void info(){
-    print('В пункте назначенияя $punkt  в $time  должен прибыть поезд под номером - $number');
+  void info() {
+    print(
+        'В пункте назначенияя $punkt  в $time  должен прибыть поезд под номером - $number');
   }
 }
-

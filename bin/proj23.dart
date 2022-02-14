@@ -1,5 +1,5 @@
 void main(){
-  Character person = Character('Jake','man', 21, 68)
+ /* Character person = Character('Jake','man', 21, 68)
   ..info()
   ..name = 'Itan'
   ..gender = 'man'
@@ -9,10 +9,20 @@ void main(){
   Character girl = Character.second('Diana', 21, 62);
 
   print(person);
-  print(girl);
+  print(girl);*/
+
+  Hero based = Hero()
+  ..name = 'baz'
+  ..health = 40
+  ..energy = 75
+  ..damage = 35;
+
+  print(based);
+
 }
 
 
+/*
 class Character {
   String name;
 
@@ -37,17 +47,30 @@ class Character {
     return 'Name: $name \nGender: $gender \nAge: $age \nWeight: $weight \n';
   }
 
-}
+
+}*/
 
 
 class Hero {
   String name ='';
-  int health=0;
-  int energy =0;
-  int damage = 0;
+  int health = 50;
+  int energy = 50;
+  int damage = 50;
 
 
-  Hero(this.name,this.health,this.energy,this.damage);
+  Hero();
+
+  Hero.warrior(this.name){
+    health = 60;
+    energy =20;
+    damage = 70;
+  }
+
+  Hero.rogue(this.name, [this.health = 50,  this.energy = 80, this.damage = 20]);
+
+
+
+Hero.healer({required this.name , this.health = 50,  this.energy = 80, this.damage = 20 }); //required  делает параметр this.name обязательным
 
   void attack(){
 
@@ -59,5 +82,11 @@ class Hero {
 
   void eat(){
 
+  }
+
+  @override
+  String toString() {
+
+    return 'Name: $name \nHealth: $health \nEnergy: $energy \nDamage: $damage \n';
   }
 }
