@@ -1,7 +1,7 @@
 
 
 void main(){
-VideoPlayer v1 = VideoPlayer(12, 34, a: 3);
+VideoPlayer v1 = VideoPlayer(12, 34);
 v1.like('loh');
 }
 
@@ -9,7 +9,7 @@ v1.like('loh');
 abstract class Player{
   int timeline = 0;
   int currentTime =0;
-  get leftTime;
+  int get leftTime => timeline - currentTime;
 
   void play(){
 
@@ -58,11 +58,11 @@ class Ifile {
 
 class AudioPlayer extends Player implements Ifile{
 
-  int b;
-  AudioPlayer (int timeline, int currentTime, {required this.b} );
+
+  AudioPlayer (int timeline, int currentTime);
 
   @override
-  int get leftTime => b;
+  int get leftTime => timeline - currentTime;
 
   @override
   void close() {
@@ -102,10 +102,10 @@ class AudioPlayer extends Player implements Ifile{
 }
 
 class VideoPlayer extends Player with Social implements Ifile {
-int a;
-VideoPlayer(int timeLine, int currentTime, {required this.a});
+
+VideoPlayer(int timeLine, int currentTime);
   @override
-  int get leftTime => a;
+  int get leftTime => timeline - currentTime;
 
 @override
 void close() {
